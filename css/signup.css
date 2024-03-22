@@ -1,15 +1,21 @@
-*{
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+:root{
+    --primary: #41c93e;
+}
+
+* {
   padding: 0;
   margin: 0;
   font-family: sans-serif;
   box-sizing: border-box;
 }
 
-:root{
-  --primary: #41c93e;
-}
-
-.form-container{
+.form-container {
   padding: 1rem;
   position: absolute;
   left: 50%;
@@ -22,7 +28,7 @@
   align-items: center;
 }
 
-.form-container img{
+.form-container img {
   height: 124px;
   width: 124px;
   border-radius: 50%;
@@ -30,26 +36,36 @@
   object-fit: cover;
 }
 
-form{
+.form-container .row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-container input {
+  border: 0.5px solid black;
+  border-radius: 5px;
+}
+
+.gender {
+  width: 100%;
+  padding: 10px;
+}
+
+.birthdate {
+  width: 100%;
+}
+
+form {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  width: 300px;
 }
 
-form input{
+form input {
   padding: 10px;
-  border: 0;
-  border-bottom: 1px solid gray;
 }
 
-form input:focus{
-  border: 0;
-  outline: none;
-  border-bottom: 1px solid var(--primary);
-}
-
-form button{
+form button {
   border-radius: 30px;
   padding: 15px;
   border: none;
@@ -59,7 +75,7 @@ form button{
   cursor: pointer;
 }
 
-.redirect{
+.redirect {
   text-decoration: none;
   color: var(--primary);
 }

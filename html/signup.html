@@ -2,22 +2,49 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Log in</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="../css/signup.css">
   </head>
   <body>
     <div class="form-container">
-      <h1 class="welcome">Welcome</h1>
+      <h1 class="title">Sign up</h1>
       <div class="image-container">
         <img src="../images/profile.jpg" alt="image profile">
       </div>
       <form class="" action="index.html" method="post">
-        <input type="text" name="username" placeholder="Username">
-        <input type="password" name="password" placeholder="Password">
+        <div class="row">
+          <input type="text" name="firstName" placeholder="First name">
+          <input type="text" name="lastName" placeholder="Last name">
+        </div>
 
-        <button type="submit" name="submit">Login</button>
+        <div class="row">
+          <input type="email" name="email" placeholder="Email">
+          <input type="number" name="mobile" placeholder="Phone number">
+        </div>
+
+        <div class="row">
+          <select class="gender" name="gender" id="">
+            <option value="" disabled selected>Gender</option>
+            <option value="male">male</option>
+            <option value="female">female</option>
+          </select>
+          <input class="birthdate" type="date" name="birthdate">
+        </div>
+
+        <div class="row">
+          <input type="password" name="password" placeholder="Password">
+          <input type="password" name="passwordRepeat" placeholder="Repeat password">
+        </div>
+
+        <div class="row">
+          <input type="text" name="course" placeholder="Course">
+          <input type="text" name="section" placeholder="Section">
+        </div>
+        
+
+        <button type="submit" name="submit">Register</button>
       </form>
-      <p>Don't have an account? <a href="signup.html" class="redirect">Sign up!</a></p>
+      <p>Already have an account? <a href="login.html" class="redirect">Log in!</a></p>
     </div>
   </body>
 </html>
