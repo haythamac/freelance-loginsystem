@@ -11,7 +11,7 @@
       <div class="image-container">
         <img src="../images/profile.jpg" alt="image profile">
       </div>
-      <form class="" action="index.html" method="post">
+      <form id="signup-form" class="" action="index.html" method="POST">
         <div class="row">
           <input type="text" name="firstName" placeholder="First name">
           <input type="text" name="lastName" placeholder="Last name">
@@ -25,8 +25,8 @@
         <div class="row">
           <select class="gender" name="gender" id="">
             <option value="" disabled selected>Gender</option>
-            <option value="male">male</option>
-            <option value="female">female</option>
+            <option value="Male">male</option>
+            <option value="Female">female</option>
           </select>
           <input class="birthdate" type="date" name="birthdate">
         </div>
@@ -45,6 +45,13 @@
         <button type="submit" name="submit">Register</button>
       </form>
       <p>Already have an account? <a href="login.html" class="redirect">Log in!</a></p>
+      <button id="demo" style="padding: 50px;">Demo</button>
     </div>
+
+    
+
+    <script src="../js/signup-validation.js">
+
+    </script>
   </body>
 </html>
