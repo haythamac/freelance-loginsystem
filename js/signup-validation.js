@@ -60,10 +60,7 @@ form.addEventListener("submit", function (event) {
 
   // If all validations pass, submit the form
   if (isValid) {
-    console.log(form);
-    console.log(`before submit`)
     form.submit();
-    console.log(`after submit`)
   }
 });
 
