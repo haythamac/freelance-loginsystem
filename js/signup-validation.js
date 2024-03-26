@@ -8,43 +8,42 @@ demo.addEventListener('click', function() {
 
 
 form.addEventListener("submit", function (event) {
-
   // Perform validation
-  let isValid = true;
-
+  let error = 0;
+  
   // Validate first name and last name (assuming they are required)
   const firstName = form.elements["firstName"].value.trim();
   const lastName = form.elements["lastName"].value.trim();
   if (firstName === "" || lastName === "") {
-    isValid = false;
+    error += 1;
     alert("Please provide both first name and last name");
   }
 
   // Validate email
   const email = form.elements["email"].value.trim();
   if (!isValidEmail(email)) {
-    isValid = false;
+    error += 1;
     alert("Please provide a valid email address");
   }
 
   // Validate mobile number
   const mobile = form.elements["mobile"].value.trim();
   if (!isValidMobileNumber(mobile)) {
-    isValid = false;
+    error += 1;
     alert("Please provide a valid mobile number");
   }
 
   // Validate gender (assuming it's required)
   const gender = form.elements["gender"].value;
   if (gender === "") {
-    isValid = false;
+    error += 1;
     alert("Please select a gender");
   }
 
   // Validate birthdate (assuming it's required)
   const birthdate = form.elements["birthdate"].value;
   if (birthdate === "") {
-    isValid = false;
+    error += 1;
     alert("Please provide a birthdate");
   }
 
@@ -52,16 +51,18 @@ form.addEventListener("submit", function (event) {
   const password = form.elements["password"].value.trim();
   const passwordRepeat = form.elements["passwordRepeat"].value.trim();
   if (password === "" || passwordRepeat === "" || password !== passwordRepeat) {
-    isValid = false;
+    error += 1;
     alert("Passwords do not match");
   }
 
   // Validate course and section (assuming they are optional)
-
   // If all validations pass, submit the form
-  if (isValid) {
+  if(error >= 1){
+    event.preventDefault();
+  }else{
     form.submit();
   }
+  
 });
 
 // Function to validate email format
