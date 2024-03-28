@@ -60,4 +60,6 @@ if ($result->num_rows > 0) {
 
 // Close connection
 $conn->close();
+
+header('location: ../html/login.html');
 ?>

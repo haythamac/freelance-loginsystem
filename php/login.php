@@ -21,8 +21,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['isLoggedIn'] = true;
             $_SESSION['student_id'] = $row['id']; // Access id from the fetched row
             echo $row['id']; // Echoing the id for testing
+            header('location: ../');
         } else {
-            echo "Invalid username or password";
+            echo "<script> alert('Wrong username or password'); history.go(-1);</script>";
         }
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
@@ -31,3 +32,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Close statement
     $stmt->close();
 }
+
+

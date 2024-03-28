@@ -1,4 +1,11 @@
-<?php session_start(); ?>
+<?php
+session_start();
+
+// Check if the isLoggedIn session variable is not set
+if (!isset($_SESSION['isLoggedIn'])) {
+    header('location: html/login.html');
+} 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,6 +25,27 @@
             background-color: #333;
             color: #fff;
             padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav img {
+            height: 50px;
+            /* Adjust the height of the logo */
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 20px;
+            /* Add some spacing between links */
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+            /* Underline links on hover */
         }
 
         .container {
@@ -65,17 +93,15 @@
 
 <body>
     <nav>
-        <div>
-            <img src="logo.png" alt="Logo" height="64">
-            <?php
-            // Check if user is logged in and show appropriate links
-            if ($_SESSION['isLoggedIn']) {
-                echo '<a href="logout.php">Logout</a>';
-            } else {
-                echo '<a href="login.php">Login</a> / <a href="signup.php">Sign Up</a>';
-            }
-            ?>
-        </div>
+        <img src="logo.png" alt="Logo" height="64">
+        <?php
+        // Check if user is logged in and show appropriate links
+        if ($_SESSION['isLoggedIn']) {
+            echo '<a href="php/logout.php">Logout</a>';
+        } else {
+            echo '<a href="html/login.html">Login</a> / <a href="html/signup.html">Sign Up</a>';
+        }
+        ?>
     </nav>
 
     <div class="container">
@@ -84,7 +110,6 @@
             <button id="timeOutButton" onclick="recordTime('out')">Time Out</button>
         </div>
         <div id="timeMessage"></div>
-        <?php echo $_SESSION['student_id']; ?>
         <table>
             <thead>
                 <tr>
